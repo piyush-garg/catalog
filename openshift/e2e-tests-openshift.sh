@@ -29,7 +29,7 @@ SERVICE_ACCOUNT=builder
 PIPELINES_CATALOG_URL=https://github.com/openshift/pipelines-catalog/
 PIPELINES_CATALOG_REF=origin/master
 PIPELINES_CATALOG_DIRECTORY=./openshift/pipelines-catalog
-PIPELINES_CATALOG_IGNORE="s2i-dotnet-1"
+PIPELINES_CATALOG_IGNORE=""
 PIPELINES_CATALOG_PRIVILIGED_TASKS="s2i-*"
 
 # Add PIPELINES_CATALOG in here so we can do the CI all together.
