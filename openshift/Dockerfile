@@ -14,5 +14,11 @@ RUN OPENSHIFT_CLIENT_VERSION=$(curl -s https://mirror.openshift.com/pub/openshif
     && rm -rf ./openshift* \
     && oc version
 
+# remove PyYAML 3.10, install pip and install latest PyYAML
+RUN yum remove -y PyYAML \
+    && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python get-pip.py \
+    && pip install PyYAML
+
 # Allow runtime users to add entries to /etc/passwd
 RUN chmod g+rw /etc/passwd
