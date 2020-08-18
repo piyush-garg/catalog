@@ -14,7 +14,7 @@ source $(dirname $0)/../test/e2e-common.sh
 cd $(dirname $(readlink -f $0))/..
 
 # Give these tests the priviliged rights
-PRIVILEGED_TESTS="buildah buildpacks buildpacks-phases jib-gradle kaniko kythe-go s2i"
+PRIVILEGED_TESTS=""
 
 # Skip Those
 SKIP_TESTS="docker-build"
@@ -30,8 +30,8 @@ PIPELINES_CATALOG_URL=${PIPELINES_CATALOG_URL:-https://github.com/openshift/pipe
 PIPELINES_CATALOG_REF=${PIPELINES_CATALOG_REF:-origin/master}
 PIPELINES_CATALOG_DIRECTORY=./openshift/pipelines-catalog
 # We are skipping e2e test for dotnet3 as the builder image is not publicly available yet
-PIPELINES_CATALOG_IGNORE="s2i-dotnet-3 s2i-dotnet-3-pr"
-PIPELINES_CATALOG_PRIVILIGED_TASKS="s2i-* buildah-pr"
+PIPELINES_CATALOG_IGNORE="s2i-* buildah-pr"
+PIPELINES_CATALOG_PRIVILIGED_TASKS=""
 
 CURRENT_TAG=$(git describe --tags 2>/dev/null || true)
 if [[ -n ${CURRENT_TAG} ]];then

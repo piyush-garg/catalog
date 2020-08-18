@@ -33,7 +33,6 @@ spec:
       script: |
         #!/bin/bash
         set -e
-        . /bin/entrypoint
 
         if [ -f requirements.txt ];
         then
