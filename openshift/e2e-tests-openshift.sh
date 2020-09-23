@@ -40,12 +40,6 @@ SKIP_TESTS="docker-build"
 # Service Account used for image builder
 SERVICE_ACCOUNT=builder
 
-# Install CI
-[[ -z ${LOCAL_CI_RUN} ]] && install_pipeline_crd
-
-# list tekton-pipelines-webhook service endpoints
-check-service-endpoints "tekton-pipelines-webhook" "tekton-pipelines"
-
 # Pipelines Catalog Repository
 PIPELINES_CATALOG_URL=${PIPELINES_CATALOG_URL:-https://github.com/openshift/pipelines-catalog/}
 PIPELINES_CATALOG_REF=${PIPELINES_CATALOG_REF:-origin/master}
@@ -99,6 +93,12 @@ function in_array() {
 
 # Checkout Pipelines Catalog and test
 pipelines_catalog
+
+# Install CI
+[[ -z ${LOCAL_CI_RUN} ]] && install_pipeline_crd
+
+# list tekton-pipelines-webhook service endpoints
+check-service-endpoints "tekton-pipelines-webhook" "tekton-pipelines"
 
 # Test if yamls can install
 test_yaml_can_install
