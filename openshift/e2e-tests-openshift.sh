@@ -47,8 +47,8 @@ SERVICE_ACCOUNT=builder
 check-service-endpoints "tekton-pipelines-webhook" "tekton-pipelines"
 
 # Pipelines Catalog Repository
-PIPELINES_CATALOG_URL=${PIPELINES_CATALOG_URL:-https://github.com/openshift/pipelines-catalog/}
-PIPELINES_CATALOG_REF=${PIPELINES_CATALOG_REF:-origin/master}
+PIPELINES_CATALOG_URL=${PIPELINES_CATALOG_URL:-https://github.com/piyush-garg/pipelines-catalog/}
+PIPELINES_CATALOG_REF=${PIPELINES_CATALOG_REF:-origin/bump_buildah}
 PIPELINES_CATALOG_DIRECTORY=./openshift/pipelines-catalog
 PIPELINES_CATALOG_IGNORE=""
 PIPELINES_CATALOG_PRIVILIGED_TASKS="s2i-* buildah-pr"
