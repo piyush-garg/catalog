@@ -35,7 +35,7 @@ cd $(dirname $(readlink -f $0))/..
 PRIVILEGED_TESTS="buildah buildpacks buildpacks-phases jib-gradle kaniko kythe-go orka-full s2i docker-build"
 
 # Skip Those
-SKIP_TESTS="docker-build orka-full"
+SKIP_TESTS="docker-build orka-full s2i-* buildah-pr"
 
 # Service Account used for image builder
 SERVICE_ACCOUNT=builder
