@@ -13,7 +13,7 @@ MAX_NUMBERS_OF_PARALLEL_TASKS=4
 KUBECTL_CMD="kubectl --cache-dir=/tmp/cache"
 
 # Give these tests the priviliged rights
-PRIVILEGED_TESTS="buildah buildpacks buildpacks-phases jib-gradle kaniko kythe-go s2i"
+PRIVILEGED_TESTS="buildah buildpacks buildpacks-phases jib-gradle kaniko kythe-go s2i golang-test"
 
 # Skip those tests when they really can't work in OpenShift
 SKIP_TESTS="docker-build orka-full"
